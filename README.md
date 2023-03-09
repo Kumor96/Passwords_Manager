@@ -17,7 +17,7 @@ Passwords Manager
 
 ```bash
 $ git clone https://github.com/Kumor96/Passwords_Manager.git
-$ cd Blog-Flask
+$ cd Passwords_Manager
 $ pip install -r requirements.txt
 $ python main.py
 ```

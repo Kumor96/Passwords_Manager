@@ -2,7 +2,7 @@
 
 
 Passwords Manager
-<img src="Screenshots/add_credential.png"/>
+<p><img src="Screenshots/add_credential.png"/></p>
 <img src="Screenshots/load_credential.png"/>
 <img src="Screenshots/password.png"/>
 ## Packages Used

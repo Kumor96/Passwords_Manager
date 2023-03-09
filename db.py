@@ -28,9 +28,7 @@ class DB:
                 credentials.append((category.portal, category.login, category.password))
         return credentials
 
-def create_tables():
-    engine = create_engine('sqlite:///database.db')
-
+def create_tables(engine):
     meta = MetaData()
 
     credentials = Table(

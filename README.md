@@ -16,6 +16,11 @@ Passwords Manager
 $ git clone https://github.com/Kumor96/Passwords_Manager.git
 $ cd Passwords_Manager
 $ pip install -r requirements.txt
+```
+* Create file .env
+* into a .env file add this:
+SALT = 'Your salt to encryption'
+```bash
 $ python main.py
 ```
 

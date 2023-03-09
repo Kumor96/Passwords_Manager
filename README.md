@@ -1,6 +1,6 @@
 # Passwords_Manager
 
-Passwords Manager
+A password manager is an app that stores your passwords, so you don't need to remember them. Once you've logged into the password manager using a 'master' password, it will remember your passwords for all your online accounts
 
 ## Packages Used
 

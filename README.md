@@ -1,10 +1,7 @@
 # Passwords_Manager
 
-
 Passwords Manager
-<p><img src="Screenshots/add_credential.png"/></p>
-<img src="Screenshots/load_credential.png"/>
-<img src="Screenshots/password.png"/>
+
 ## Packages Used
 
 
@@ -21,3 +18,7 @@ $ cd Passwords_Manager
 $ pip install -r requirements.txt
 $ python main.py
 ```
+
+<p><img src="Screenshots/add_credential.png"/></p>
+<img src="Screenshots/load_credential.png"/>
+<img src="Screenshots/password.png"/>

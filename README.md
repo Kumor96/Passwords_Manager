@@ -1,7 +1,10 @@
 # Passwords_Manager
 
+
 Passwords Manager
-<img src="Screenshots/add_credential.png" width="1010" height="292" />
+<img src="Screenshots/add_credential.png"/>
+<img src="Screenshots/load_credential.png"/>
+<img src="Screenshots/password.png"/>
 ## Packages Used
 
 

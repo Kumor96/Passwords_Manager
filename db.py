@@ -29,7 +29,7 @@ class DB:
         return credentials
 
 def create_tables():
-    engine = create_engine('sqlite:///passwords.db')
+    engine = create_engine('sqlite:///database.db')
 
     meta = MetaData()
 

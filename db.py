@@ -28,15 +28,15 @@ class DB:
                 credentials.append((category.portal, category.login, category.password))
         return credentials
 
-def create_tables(engine):
-    meta = MetaData()
+    def create_tables(self):
+        meta = MetaData()
 
-    credentials = Table(
-        'credentials', meta,
-        Column('id',Integer, primary_key=True),
-        Column('portal',String),
-        Column('login',String),
-        Column('password',String)
-    )
+        credentials = Table(
+            'credentials', meta,
+            Column('id',Integer, primary_key=True),
+            Column('portal',String),
+            Column('login',String),
+            Column('password',String)
+        )
 
-    meta.create_all(engine)
+        meta.create_all(self.engine)

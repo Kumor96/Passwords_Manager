@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from sqlalchemy import create_engine
 import os
-from db import DB, create_tables
+from db import DB
 from crypto import Encrypt, Decrypt
 from cryptography.fernet import InvalidToken
 
@@ -46,7 +46,7 @@ class PageOne(tk.Frame):
         self.password.delete(0,'end')
     
     def ask_password(self):
-        self.label_to_decrypt = ttk.Label(self, text="Haslo do szyfrowania")
+        self.label_to_decrypt = ttk.Label(self, text="Password to encryption")
         self.label_to_decrypt.grid(row=2, column=2)
         self.password_to_decrypt = ttk.Entry(self, show='*')
         self.password_to_decrypt.grid(row=3, column=2)
@@ -60,8 +60,9 @@ class PageTwo(tk.Frame):
         self.grid()
         self.date = date
         self.ask_password()
+
     def ask_password(self):
-        self.asking = ttk.Label(self, text="Haslo do odszyfrowania")
+        self.asking = ttk.Label(self, text="Password to decryption")
         self.asking.grid(row=2, column=2)
         self.password_to_decrypted = ttk.Entry(self, show='*')
         self.password_to_decrypted.grid(row=3, column=2)
@@ -74,6 +75,7 @@ class PageTwo(tk.Frame):
         self.asking.destroy()
         self.password_to_decrypted.destroy()
         self.accept.destroy()
+        
         credentials = self.date.load_password()
 
         self.tree = ttk.Treeview(self,
@@ -92,10 +94,9 @@ class PageTwo(tk.Frame):
         self.tree.after(10000, quit)
     
     def on_select(self, event):
-        item = self.tree.selection()[0]
         self.clipboard_clear()
         try:
-            dec = Decrypt(self.tree.item(item, 'values')[2])
+            dec = Decrypt(self.tree.item(self.tree.selection()[0], 'values')[2])
             self.clipboard_append(dec.execute(self.decrypt_pass))
         except InvalidToken:
             self.tree.destroy()
@@ -104,10 +105,11 @@ class PageTwo(tk.Frame):
 def main():
 
     engine = create_engine('sqlite:///datebase.db', echo=True, future=True)
-    if not os.path.exists('datebase.db'):
-        create_tables(engine)
-    
+
     date = DB(engine)
+    if not os.path.exists('datebase.db'):
+        date.create_tables()
+    
     root = tk.Tk()
     root.title('Password Manager')
     root.geometry('400x300')

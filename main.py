@@ -8,6 +8,8 @@ from cryptography.fernet import InvalidToken
 
 
 class PageOne(tk.Frame):
+    """First tab
+    """
     def __init__(self, master, date):
         super().__init__(master)
         self.grid()
@@ -55,6 +57,8 @@ class PageOne(tk.Frame):
         self.accept_to_decrypt.grid(row=4,column=2)
 
 class PageTwo(tk.Frame):
+    """Second tab
+    """
     def __init__(self, master, date):
         super().__init__(master)
         self.grid()
